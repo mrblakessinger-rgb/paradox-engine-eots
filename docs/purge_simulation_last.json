@@ -1,0 +1,173 @@
+{
+  "scenario": "grok_build_july2026_class_purge_simulation",
+  "references": {
+    "wire_analysis": "https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547",
+    "hn": "https://news.ycombinator.com/item?id=48877371",
+    "repro_repo": "https://github.com/cereblab/grok-build-exfil-repro"
+  },
+  "mapped_failure_modes": [
+    "multi_GB_state_upload_pressure",
+    "dual_channel_model_429_while_storage_continues",
+    "sudden_server_side_purge_or_disable_flag",
+    "long_running_watchers_die_mid_loop",
+    "context_thrash_and_state_loss"
+  ],
+  "honest_scope": "Session/fleet thrash survival + essential-state retention via Wisdom Compression. Not a network upload blocker; privacy pins remain separate (harness config).",
+  "constants": {
+    "repo_upload_gb_modeled": 5.1,
+    "upload_chunks": 73,
+    "chunk_mb": 75.0,
+    "model_channel_kb": 192.0,
+    "storage_to_model_ratio_approx": 27800,
+    "I_storm": [
+      14.0,
+      18.0
+    ]
+  },
+  "naive": {
+    "agent": "naive",
+    "alive_at_end": false,
+    "essential_intact_at_end": false,
+    "crashed": true,
+    "max_bulk_gb_seen": 11.17808219178081,
+    "min_stability": 0.05,
+    "late_stability": 0.05000000000000001,
+    "post_purge_mean_stability": 0.049999999999999975,
+    "recover_mean_stability": 0.04999999999999999,
+    "steps_to_recover": null,
+    "purge_survived": false,
+    "hard_loss_on_purge": true
+  },
+  "eye_of_the_storm": {
+    "agent": "eye_of_the_storm",
+    "alive_at_end": true,
+    "essential_intact_at_end": true,
+    "crashed": false,
+    "max_bulk_gb_seen": 11.17808219178081,
+    "min_stability": 0.6605008279632311,
+    "late_stability": 0.9553027385326116,
+    "post_purge_mean_stability": 0.9346329528620325,
+    "recover_mean_stability": 0.9514737747254756,
+    "steps_to_recover": 5,
+    "purge_survived": true,
+    "hard_loss_on_purge": false
+  },
+  "winner": "eye_of_the_storm",
+  "headline": "Eye of the Storm kept session essentials + wisdom under multi-GB thrash and sudden purge; naive agent lost state and crashed.",
+  "wisdom_compression": {
+    "n_scars": 100,
+    "wisdom_added": [
+      [
+        "survive_before_goodput",
+        "long continuous hell can keep fleet alive near target; low success floor is expected until calm"
+      ],
+      [
+        "bright_path",
+        "success and recovery scars build competent optimism; trauma must not monopolize intuition"
+      ]
+    ],
+    "intuition_deltas": {
+      "repair_bias": {
+        "from": 2.189999999999999,
+        "to": 2.229999999999999,
+        "delta": 0.04
+      },
+      "floor_boost": {
+        "from": 0.16499999999999998,
+        "to": 0.18,
+        "delta": 0.015
+      },
+      "pairing_strength": {
+        "from": 0.97,
+        "to": 1.0,
+        "delta": 0.03
+      },
+      "explore_bias": {
+        "from": 0.135,
+        "to": 0.15000000000000002,
+        "delta": 0.015
+      },
+      "damper_bias": {
+        "from": 2.3,
+        "to": 2.29,
+        "delta": -0.01
+      },
+      "failure_respect": {
+        "from": 1.3000000000000003,
+        "to": 1.3000000000000003,
+        "delta": 0.0
+      }
+    },
+    "cleared_raw": true,
+    "n_bright": 0,
+    "n_climb": 99,
+    "n_tighten": 1,
+    "episode_meta_kept": {
+      "first_hard_break": null,
+      "survived_long_hell": true,
+      "optimistic_pass": true
+    }
+  },
+  "wisdom_keys": [
+    "high_I_hold",
+    "anti_lock",
+    "jumps",
+    "hive",
+    "paradox",
+    "quota_budget_gate",
+    "survive_before_goodput",
+    "recovery_climb",
+    "soft_vs_hard_break",
+    "paradox_scar_path",
+    "storm_arsenal",
+    "beacon_arsenal",
+    "bright_path",
+    "damper_policy",
+    "weekly_drill",
+    "credit_loop"
+  ],
+  "series_len": 125,
+  "train_best": {
+    "epoch": 0,
+    "score": 0.9129136388024391,
+    "ok_all": true,
+    "rows": [
+      {
+        "epoch": 0,
+        "I": 12.0,
+        "late_stability": 0.7642634714301644,
+        "min_stability": 0.5484573561073378,
+        "zero_hard_break": true,
+        "crashed": false,
+        "mean_thrash": 0.5706552088394312
+      },
+      {
+        "epoch": 0,
+        "I": 14.0,
+        "late_stability": 0.7630564351914317,
+        "min_stability": 0.5479306780530824,
+        "zero_hard_break": true,
+        "crashed": false,
+        "mean_thrash": 0.6212731481281424
+      },
+      {
+        "epoch": 0,
+        "I": 15.0,
+        "late_stability": 0.7624547926317955,
+        "min_stability": 0.5477065499224575,
+        "zero_hard_break": true,
+        "crashed": false,
+        "mean_thrash": 0.6465862005686155
+      },
+      {
+        "epoch": 0,
+        "I": 16.0,
+        "late_stability": 0.7618798559563648,
+        "min_stability": 0.5475044573935365,
+        "zero_hard_break": true,
+        "crashed": false,
+        "mean_thrash": 0.6715657641055691
+      }
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "train_best": {
+    "epoch": 0,
+    "score": 0.9149690456409051,
+    "ok_all": true,
+    "rows": [
+      {
+        "epoch": 0,
+        "I": 8.0,
+        "late_stability": 0.7719692895592016,
+        "min_stability": 0.5540874684619967,
+        "zero_hard_break": true,
+        "crashed": false,
+        "mean_thrash": 0.4533941388287236
+      },
+      {
+        "epoch": 0,
+        "I": 12.0,
+        "late_stability": 0.7644189437601803,
+        "min_stability": 0.5520595235507948,
+        "zero_hard_break": true,
+        "crashed": false,
+        "mean_thrash": 0.5653730892175063
+      },
+      {
+        "epoch": 0,
+        "I": 14.0,
+        "late_stability": 0.7633040324230544,
+        "min_stability": 0.5515451080444832,
+        "zero_hard_break": true,
+        "crashed": false,
+        "mean_thrash": 0.6164706047335136
+      },
+      {
+        "epoch": 0,
+        "I": 15.0,
+        "late_stability": 0.762764068691322,
+        "min_stability": 0.5513287617377762,
+        "zero_hard_break": true,
+        "crashed": false,
+        "mean_thrash": 0.6420090493470494
+      },
+      {
+        "epoch": 0,
+        "I": 16.0,
+        "late_stability": 0.7623888937707675,
+        "min_stability": 0.5511050326238848,
+        "zero_hard_break": true,
+        "crashed": false,
+        "mean_thrash": 0.6669763132037487
+      }
+    ]
+  },
+  "recovery": {
+    "peak_I": 15.0,
+    "hold_steps": 40,
+    "recover_steps": 80,
+    "zero_hard_break": true,
+    "crashed": false,
+    "steps_to_recover": 1,
+    "recovered": true,
+    "late_mean_stability": 0.9542796665804556,
+    "min_stability": 0.5518109986940809,
+    "wisdom_keys": [
+      "high_I_hold",
+      "anti_lock",
+      "jumps",
+      "hive",
+      "paradox",
+      "quota_budget_gate",
+      "survive_before_goodput",
+      "recovery_climb",
+      "soft_vs_hard_break",
+      "paradox_scar_path",
+      "storm_arsenal",
+      "beacon_arsenal"
+    ]
+  },
+  "summary": {
+    "n": 120,
+    "max_I": 15.0,
+    "max_thrash": 0.82,
+    "mean_stability": 0.8846015461073224,
+    "late_stability": 0.9569061609636477,
+    "min_stability": 0.5518109986940809,
+    "mean_thrash": 0.26807761381560685,
+    "hard_breaks": 0,
+    "soft_breaks": 0,
+    "storm_frac": 0.39166666666666666,
+    "zero_hard_break": true
+  }
+}
