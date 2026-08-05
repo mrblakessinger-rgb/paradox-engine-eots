@@ -37,8 +37,8 @@ def main():
     
     print("=== Proof of Burn – Multi-Agent Fleet (STANDALONE) ===")
     print(f"agents={agents} steps={steps} fail_rate=75%")
-    print("estimator=ESTIMATOR")
-    print("per_agent_budget=120,000 fleet_wallet=2,000,000")
+    print("estimator=heuristic")
+    print("per_agent_budget=120,000 fleet_wallet=50,000,000")
     print(f"{'metric':<35} {'naive':<12} {'paradox':<12}")
     print("-" * 58)
     print(f"{'total tokens':<35} {naive_total:<12,d} {paradox_total:<12,d}")
