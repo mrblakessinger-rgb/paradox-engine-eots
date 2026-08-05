@@ -1,4 +1,6 @@
-﻿import time
+
+C:\Users\mrbla\OneDrive - Butte-Glenn Community College District\Desktop\paradox-engine-eots>python -c "import inspect, proof_of_burn_standalone as pob; print(inspect.getsource(pob))"
+import time
 
 def main():
     agents = 100
@@ -7,10 +9,10 @@ def main():
     base_tokens = 12000
     cap = 3100
     multiplier = 1.45
-    
+
     naive_total = 0
     paradox_total = 0
-    
+
     t0 = time.perf_counter()
     for _ in range(agents):
         cur = base_tokens
@@ -19,7 +21,7 @@ def main():
             if (s / steps) < fail_rate:
                 cur = int(cur * multiplier)
     t1 = time.perf_counter()
-    
+
     t2 = time.perf_counter()
     for _ in range(agents):
         cur = base_tokens
@@ -28,13 +30,13 @@ def main():
             if (s / steps) < fail_rate:
                 cur = int(cur * multiplier)
     t3 = time.perf_counter()
-    
+
     naive_ms = round((t1 - t0) * 1000, 1)
     paradox_ms = round((t3 - t2) * 1000, 1)
-    
+
     saved = naive_total - paradox_total
     eff = (saved / naive_total) * 100
-    
+
     print("=== Proof of Burn – Multi-Agent Fleet (STANDALONE) ===")
     print(f"agents={agents} steps={steps} fail_rate=75%")
     print("estimator=heuristic")
