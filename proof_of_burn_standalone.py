@@ -1,6 +1,24 @@
-
-C:\Users\mrbla\OneDrive - Butte-Glenn Community College District\Desktop\paradox-engine-eots>python -c "import inspect, proof_of_burn_standalone as pob; print(inspect.getsource(pob))"
 import time
+
+def run_naive_fleet(agents=100, steps=8, fail_rate=0.75, base_tokens=12000, multiplier=1.45):
+    naive_total = 0
+    for _ in range(agents):
+        cur = base_tokens
+        for s in range(steps):
+            naive_total += cur
+            if (s / steps) < fail_rate:
+                cur = int(cur * multiplier)
+    return naive_total
+
+def run_breaker_fleet(agents=100, steps=8, fail_rate=0.75, base_tokens=12000, multiplier=1.45, cap=3100):
+    paradox_total = 0
+    for _ in range(agents):
+        cur = base_tokens
+        for s in range(steps):
+            paradox_total += min(cur, cap)
+            if (s / steps) < fail_rate:
+                cur = int(cur * multiplier)
+    return paradox_total, 0, 0
 
 def main():
     agents = 100
@@ -10,25 +28,12 @@ def main():
     cap = 3100
     multiplier = 1.45
 
-    naive_total = 0
-    paradox_total = 0
-
     t0 = time.perf_counter()
-    for _ in range(agents):
-        cur = base_tokens
-        for s in range(steps):
-            naive_total += cur
-            if (s / steps) < fail_rate:
-                cur = int(cur * multiplier)
+    naive_total = run_naive_fleet(agents, steps, fail_rate, base_tokens, multiplier)
     t1 = time.perf_counter()
 
     t2 = time.perf_counter()
-    for _ in range(agents):
-        cur = base_tokens
-        for s in range(steps):
-            paradox_total += min(cur, cap)
-            if (s / steps) < fail_rate:
-                cur = int(cur * multiplier)
+    paradox_total, _, _ = run_breaker_fleet(agents, steps, fail_rate, base_tokens, multiplier, cap)
     t3 = time.perf_counter()
 
     naive_ms = round((t1 - t0) * 1000, 1)
