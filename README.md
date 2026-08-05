@@ -11,64 +11,24 @@ Multi-agent **retry / cost-cap simulation** under stated parameters. Measures to
 git clone https://github.com/mrblakessinger-rgb/paradox-engine-eots.git
 cd paradox-engine-eots
 python proof_of_burn_standalone.py
-python scripts\run_token_stress_matrix.py
+python scripts\\run_token_stress_matrix.py
+```
 
-Token Stress Matrix (verified on main)
-All profiles import proof_of_burn_standalone.py and require ≥ 90% efficiency vs naive.
+### Token Stress Matrix (verified on main)
 
+All profiles import `proof_of_burn_standalone.py` and require **>= 90%** efficiency vs naive.
 
+| Profile | Agents | Steps | Fail Rate | Efficiency | Absolute Saved | Status |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Primary Gate E0** | 100 | 8 | 75% | 94.42% | 41.94M | PASS |
+| **Cascade Outage** | 100 | 12 | 90% | 98.37% | 223.95M | PASS |
+| **Long Stampede** | 100 | 16 | 75% | 99.23% | 637.32M | PASS |
+| **Heavy Mult** | 100 | 8 | 75% | 96.55% | 69.34M | PASS |
 
+Full telemetry: [docs/TOKEN_STRESS_MATRIX.md](docs/TOKEN_STRESS_MATRIX.md)
 
+### Honesty & Scope
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ProfileAgentsStepsFail RateEfficiencyAbsolute SavedStatusPrimary Gate E0100875%94.42%41.94MPASSCascade Outage1001290%98.37%223.95MPASSLong Stampede1001675%99.23%637.32MPASSHeavy Mult100875%96.55%69.34MPASS
-Full telemetry: docs/TOKEN_STRESS_MATRIX.md
-Honesty & Scope
-
-Harness is a multi-agent retry/cost model with per-attempt caps (min(cost, cap)); not a live proxy of your cloud/API account.
-Pilot SLA (if offered): budget ceiling protection + pilot-fee credit — not a guarantee of your production API bill.
-MIT / AS IS. See LICENSE.
+- Harness is a multi-agent retry/cost model with per-attempt caps (`min(cost, cap)`); **not** a live proxy of your cloud/API account.
+- Pilot SLA (if offered): budget **ceiling** protection + **pilot-fee credit** — not a guarantee of your production API bill.
+- MIT / AS IS. See `LICENSE`.
