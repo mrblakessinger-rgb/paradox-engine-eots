@@ -1,6 +1,6 @@
 # EoTS: Enterprise Token Shield
 
-Multi-agent token budget defense and circuit-breaker engine. Prevents runaway exponential retry loops and unexpected API billing shock during agentic task execution.
+Multi-agent retry/cost-cap simulation model under stated parameters. Prevents runaway exponential retry loops and unexpected API billing shock during agentic task execution.
 
 ## Token Stress Matrix (Dynamic Execution)
 Verified via local simulation harness:
@@ -14,13 +14,13 @@ Verified via local simulation harness:
 
 ## Quickstart & Local Verification
 Clone the repository and run the verification harnesses:
-`ash
+```bash
 git clone [https://github.com/mrblakessinger-rgb/paradox-engine-eots.git](https://github.com/mrblakessinger-rgb/paradox-engine-eots.git)
 cd paradox-engine-eots
 python proof_of_burn_standalone.py
 python scripts/run_token_stress_matrix.py
-`
+```
 
 ## Honesty & Scope
-* Harness is a multi-agent retry/cost model under stated parameters; not a live proxy of your infrastructure account.
+* Harness is a multi-agent retry/cost model under stated parameters with per-attempt caps; not a live proxy of your infrastructure account.
 * Pilot SLA: Structured around budget ceiling protection + pilot-fee credit.
