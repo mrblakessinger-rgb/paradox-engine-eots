@@ -42,6 +42,9 @@ def main():
     saved = naive_total - paradox_total
     eff = (saved / naive_total) * 100
 
+    # Strict GTM Quality Gate Assertion
+    assert eff >= 90.0, f"Critical: Efficiency {eff:.2f}% fell below mandatory 90.0% threshold."
+
     print("=== Proof of Burn – Multi-Agent Fleet (STANDALONE) ===")
     print(f"agents={agents} steps={steps} fail_rate=75%")
     print("estimator=heuristic")
