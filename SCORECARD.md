@@ -1,0 +1,1 @@
+# EoTS Evidence Scorecard\n\n| Metric | Value |\n|---|---|\n| Token Savings | **98.3%** |\n| Status | PROOF_OF_BURN_PASS |\n
