@@ -1,19 +1,19 @@
-﻿# Paradox Engine EoTS â€“ Product One-Pager
+# Paradox Engine EoTS - Product One-Pager
 
 ## Stateful cost-cap simulation and token stress matrix
 
 ### Summary
 
-EoTS is a multi-agent **retry / cost-cap simulation** under stated parameters. It compares a naive exponential retry fleet to a capped fleet (min(cost, cap)) and requires **>= 90%** token efficiency on every stress profile.
+EoTS is a multi-agent **retry / cost-cap simulation** under stated parameters. It compares a naive exponential retry fleet to a capped fleet and requires **>= 90%** token efficiency on every stress profile.
 
 ### Quickstart
 
-`cmd
+~~~cmd
 git clone https://github.com/mrblakessinger-rgb/paradox-engine-eots.git
 cd paradox-engine-eots
 python proof_of_burn_standalone.py
 python scripts\run_token_stress_matrix.py
-`
+~~~
 
 ### Verified matrix (main)
 
@@ -28,11 +28,10 @@ python scripts\run_token_stress_matrix.py
 
 - Engine: proof_of_burn_standalone.py
 - Matrix: scripts/run_token_stress_matrix.py
-- Gate: efficiency **>= 90%** on all profiles
+- Gate: efficiency >= 90% on all profiles
 
 ### Honesty and SLA
 
 - Not a live proxy of your OpenAI/cloud account.
-- Pilot SLA (if offered): ceiling protection + pilot-fee credit â€” not a guarantee of production API spend.
+- Pilot SLA (if offered): ceiling protection + pilot-fee credit - not a guarantee of production API spend.
 - MIT / AS IS.
-
