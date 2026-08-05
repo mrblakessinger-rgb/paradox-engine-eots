@@ -1,4 +1,10 @@
-﻿import proof_of_burn_standalone as pob
+﻿import sys
+import os
+
+# Resolve parent directory so standalone engine can be imported from scripts/
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+import proof_of_burn_standalone as pob
 
 def evaluate_profile(name, agents, steps, fail_rate, base_tokens, cap, multiplier):
     naive = pob.run_naive_fleet(agents=agents, steps=steps, fail_rate=fail_rate, base_tokens=base_tokens, multiplier=multiplier)
