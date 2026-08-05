@@ -1,4 +1,4 @@
-# Paradox Engine – Enterprise Token Stress (EoTS)
+﻿# Paradox Engine â€“ Enterprise Token Stress (EoTS)
 
 [![GTM Ready](https://img.shields.io/badge/Status-GTM%20Ready-emerald.svg)](https://github.com/mrblakessinger-rgb/paradox-engine-eots)
 [![Efficiency Gate](https://img.shields.io/badge/Efficiency-%E2%88%A5%2090%25-blue.svg)](docs/TOKEN_STRESS_MATRIX.md)
@@ -11,7 +11,7 @@ Multi-agent **retry / cost-cap simulation** under stated parameters. Measures to
 git clone https://github.com/mrblakessinger-rgb/paradox-engine-eots.git
 cd paradox-engine-eots
 python proof_of_burn_standalone.py
-python scripts\\run_token_stress_matrix.py
+python scripts\run_token_stress_matrix.py
 ```
 
 ### Token Stress Matrix (verified on main)
@@ -30,5 +30,6 @@ Full telemetry: [docs/TOKEN_STRESS_MATRIX.md](docs/TOKEN_STRESS_MATRIX.md)
 ### Honesty & Scope
 
 - Harness is a multi-agent retry/cost model with per-attempt caps (`min(cost, cap)`); **not** a live proxy of your cloud/API account.
-- Pilot SLA (if offered): budget **ceiling** protection + **pilot-fee credit** — not a guarantee of your production API bill.
+- Pilot SLA (if offered): budget **ceiling** protection + **pilot-fee credit** â€” not a guarantee of your production API bill.
 - MIT / AS IS. See `LICENSE`.
+
