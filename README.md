@@ -1,4 +1,5 @@
 ﻿# Paradox Engine â€“ Enterprise Token Stress (EoTS)
+**Fixed-scope diagnostic:** see [DIAGNOSTIC.md](DIAGNOSTIC.md)
 
 [![GTM Ready](https://img.shields.io/badge/Status-GTM%20Ready-emerald.svg)](https://github.com/mrblakessinger-rgb/paradox-engine-eots)
 [![Efficiency Gate](https://img.shields.io/badge/Efficiency-%E2%88%A5%2090%25-blue.svg)](docs/TOKEN_STRESS_MATRIX.md)
